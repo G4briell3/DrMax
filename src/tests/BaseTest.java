@@ -10,9 +10,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import pages.MainPage;
+
 public class BaseTest 
 {
  public static WebDriver driver;
+ 
+ public static MainPage mainPage;
  
  @BeforeClass
  public static void setup()
@@ -22,6 +26,12 @@ public class BaseTest
  
  @AfterClass
  public static void teardown()
+ {		
+		
+ }
+ 
+ @Before
+ public  void before()
  {
 		ChromeOptions chromeOption=new ChromeOptions();
 		chromeOption.addArguments("--remote-allow-origins=*","ignore-certificate-errors");
@@ -39,13 +49,9 @@ public class BaseTest
 		chromeOption.addArguments("--disable-extensions"); // Disable extensions
 		
 		driver=new ChromeDriver(chromeOption);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
- }
- 
- @Before
- public  void before()
- {
-	 
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); 
+		
+		mainPage=new MainPage(driver);
  }
  
  @After

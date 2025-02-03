@@ -22,4 +22,12 @@ public class RegisterUserPage
    private By termsAndConditionsAgreementButton=By.xpath("//div[@class=\"drmax-selection__text w-100\"]/div/span/a/following-sibling::a[@href=\"https://www.drmax.ro/politica-confidentialitate\"]");
    private By advertisingAgreementButton=By.xpath("//div[@class=\"drmax-selection__text w-100\"]/div/span[contains(.,\"Sunt de acord sa primesc \")]");
    private By submitButton=By.xpath("//button[@class=\"w-100 mt-2 drmax-btn drmax-btn--primary drmax-btn--medium drmax-btn-icon--left\"]/div/span[contains(.,\"Finalizeaza inregistrarea\")]");
+
+
+   public void checkPageVisibility()
+   {
+	   
+   }
 }
+
+
